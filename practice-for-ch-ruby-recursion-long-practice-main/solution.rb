@@ -12,4 +12,23 @@ end
 
 # p array_sum([1, 2, 3, 4, 5])
 
+def exp(base, power)
+  return 1 if power == 0
+  return base * exp(base, power - 1)
+end
 
+def exp_two(base, power)
+  return 1 if power == 0
+  return base if power == 1
+
+  if power.even? 
+    result = exp_two(base, power / 2)
+    return result * result
+  else
+    result = exp_two(base, (power - 1))
+    base * ((result / 2) * result )
+  end
+end
+
+p exp_two(2, 2)
+p exp_two(2, 3)
