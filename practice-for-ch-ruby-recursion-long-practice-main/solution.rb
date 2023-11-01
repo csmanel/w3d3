@@ -115,5 +115,20 @@ end
 # array = [8, 4, 2, 7]
 # p merge_sort(array)
 
+def subsets(arr)
+  return [[]] if arr.empty?
+  return [[], [arr[0]]] if arr.length == 1
+  #arr[0] = [[]] arr[-1] = [arr]
+ 
+  return [[arr[0]]] + subsets(arr[1..-1])
+
+  arr.each_with_index do |ele, i|
+    
+  end
+end
 
 
+# subsets([]) # => [[]]
+p subsets([1]) # => [[], [1]]
+p subsets([1, 2]) # => [[], [1], [2], [1, 2]]
+# p subsets([1, 2, 3])
